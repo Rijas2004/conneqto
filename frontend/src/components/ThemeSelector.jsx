@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
 import { PaletteIcon } from "lucide-react";
 
-import { setTheme } from "../store/themeSlice";
-import { THEMES } from "../constants";
+import { setTheme } from "../store/themeSlice.js";
+import { THEMES } from "../constants/index.js";
 
 const ThemeSelector = () => {
   const theme = useSelector((state) => state.theme.theme);

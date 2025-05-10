@@ -1,11 +1,5 @@
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
-import {
-  getOutgoingFriendReqs,
-  getRecommendedUsers,
-  getUserFriends,
-  sendFriendRequest,
-} from "../lib/api";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Link } from "react-router";
 import {
   CheckCircleIcon,
@@ -14,10 +8,15 @@ import {
   UsersIcon,
 } from "lucide-react";
 
-import { capitalize } from "../lib/utils";
-
-import FriendCard, { getLanguageFlag } from "../components/FriendCard";
-import NoFriendsFound from "../components/NoFriendsFound";
+import {
+  getOutgoingFriendReqs,
+  getRecommendedUsers,
+  getUserFriends,
+  sendFriendRequest,
+} from "../lib/api.js";
+import { capitalize } from "../lib/utils.js";
+import FriendCard, { getLanguageFlag } from "../components/FriendCard.jsx";
+import NoFriendsFound from "../components/NoFriendsFound.jsx";
 
 const HomePage = () => {
   const queryClient = useQueryClient();
